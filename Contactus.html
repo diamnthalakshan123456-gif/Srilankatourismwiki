@@ -80,60 +80,36 @@
 @media (max-width: 952px) {
     .nav-links {
         position: fixed;
-        width: 100%;
+        width: 50%;
         height: 100vh;
         background: #2c3e50;
         top: 80px;
-        left: -100%; 
+        left: -100% !important; 
         transition: all 0.5s;
-        display: block;
+        z-index: 1000;
+        display: none;
+      background-image: url(slpic\ ali-maah-zyOeEm4NsPM-unsplash);
+
+        
     }
 
  
     .nav-links.active {
-        left: 0;
-    }
-}
-
-
-
-@media screen and (max-width: 850px) {
-    .checkbtn {
-        display: block; 
-        cursor: pointer;
-    }
-    
-    
-    .checkbtn span {
+        left: 0 !important;
         display: block;
-        width: 25px;
-        height: 3px;
-        background: white;
-        margin: 5px;
-        border-radius: 5px;
-        transition: all 0.3s;
     }
+    .checkbtn{
+        cursor: pointer;
 
-    .nav-links {
-        position: absolute;
-        width: 100%;
-        height: 100vh;
-        background: #2c3e50;
-        top: 80px;
-        left: -100%;
-        text-align: center;
-        transition: all .5s;
-        flex-direction: column;
     }
+    .navbar{
+        position: relative;
 
-    .nav-links li {
+    }
+    .nav-links li{
         display: block;
         margin: 50px 0;
-    }
-
-  
-    #check:checked ~ .nav-links {
-        left: 0;
+        line-height: 30px;
     }
 }
 
@@ -170,11 +146,14 @@
 
 <script>
 function toggleMenu() {
-   
-    document.querySelector('.nav-links').classList.toggle('active');
+    var menu = document.querySelector('.nav-links');
+    if (menu.classList.contains('active')) {
+        menu.classList.remove('active');
+    } else {
+        menu.classList.add('active');
+    }
 }
 </script>
-        
 
     
 </body>

@@ -136,6 +136,41 @@
         left: 0;
     }
 }
+@media (max-width: 952px) {
+    .nav-links {
+        position: fixed;
+        width: 50%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left: -100% !important; 
+        transition: all 0.5s;
+        z-index: 1000;
+        display: none;
+      background-image: url(slpic\ ali-maah-zyOeEm4NsPM-unsplash);
+
+        
+    }
+
+ 
+    .nav-links.active {
+        left: 0 !important;
+        display: block;
+    }
+    .checkbtn{
+        cursor: pointer;
+
+    }
+    .navbar{
+        position: relative;
+
+    }
+    .nav-links li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+}
 
                 
     </style>
@@ -165,10 +200,14 @@
         </ul>
 
     </nav>
-    <script>
+<script>
 function toggleMenu() {
-   
-    document.querySelector('.nav-links').classList.toggle('active');
+    var menu = document.querySelector('.nav-links');
+    if (menu.classList.contains('active')) {
+        menu.classList.remove('active');
+    } else {
+        menu.classList.add('active');
+    }
 }
 </script>
 

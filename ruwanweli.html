@@ -143,18 +143,36 @@
 @media (max-width: 952px) {
     .nav-links {
         position: fixed;
-        width: 100%;
+        width: 50%;
         height: 100vh;
         background: #2c3e50;
         top: 80px;
-        left: -100%; 
+        left: -100% !important; 
         transition: all 0.5s;
-        display: block;
+        z-index: 1000;
+        display: none;
+      background-image: url(slpic\ ali-maah-zyOeEm4NsPM-unsplash);
+
+        
     }
 
  
     .nav-links.active {
-        left: 0;
+        left: 0 !important;
+        display: block;
+    }
+    .checkbtn{
+        cursor: pointer;
+
+    }
+    .navbar{
+        position: relative;
+
+    }
+    .nav-links li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
     }
 }
 
@@ -197,13 +215,17 @@
 <h3>Visitor Information</h3>
 <p class="description-text">Ruwanweli Seya is one of the most beloved destinations for tourists from all over the world. If you are planning to visit, it is mandatory to wear modest white attire. The peaceful atmosphere in the evening, with the soft glow of oil lamps around the stupa, brings a sense of immense mental relief and joy to anyone who visits.
     </p>
-
 <script>
 function toggleMenu() {
-   
-    document.querySelector('.nav-links').classList.toggle('active');
+    var menu = document.querySelector('.nav-links');
+    if (menu.classList.contains('active')) {
+        menu.classList.remove('active');
+    } else {
+        menu.classList.add('active');
+    }
 }
 </script>
+
 
         
 

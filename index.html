@@ -1,0 +1,286 @@
+<html>
+<head>
+	<title>Sri Lanka's WIKI</title>
+	<style type="text/css">
+		h1{ color:darkred;
+			text-align:center;
+			font-size: 40px;
+			 }
+			p{text-align: center;
+				margin-left: auto;
+				margin-right: auto;
+				font-size: 20px;
+				max-width: 1000px}
+				.journey{
+					display: block;
+                    text-align:center;
+					font-size: 24px;
+					color: green;
+					font-style:bold;
+				}
+				img{
+					max-width: 500px;
+					image-resolution: !important;
+					text-align: center;
+					display: block;
+					margin-left: auto;
+					margin-right: auto;
+					width: 60%
+				}
+				marquee{
+					margin-top: 60px;  
+        background-color:darkred;
+        color:white;
+        padding: 10px;
+        display: block;
+					
+				}
+				.navbar{
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					background-color: darkcyan;
+					padding: rem(1, 2);
+					color: white;
+				height: 100px;
+				}
+				.logo img{
+					width: 100px;
+					height: auto;
+					display: block;
+				}
+				.nav-links{
+					display: flex;
+					list-style:none;
+					align-items: center;
+					justify-content: center;
+					flex-grow: 1;
+
+
+				}
+				
+			
+				.nav-links li{
+                        margin-left: 100px;
+				}
+				.nav-links a{
+					color: white;
+					text-decoration: none;
+					font-weight: bold;
+					transition: 0.3s;
+					}
+					.nav-links a:hover{
+						color: #ff9900;
+					}
+					.logo{
+						font-size: 24px;
+						font-weight: bold;
+						letter-spacing: 2px;
+					}
+					.dropdown{
+						position: relative;
+					}
+					.dropdown-menu{
+						display: none;
+						position: absolute;
+						background-color: darkcyan;
+						min-width: 160px;
+						top: 100%;
+						left: 0;
+						z-index: 999;
+					}
+					.dropdown-menu li {
+						margin: 0 !important;
+					}
+					.dropdown-menu li a {
+						padding: 10px 20px;
+						display: block;
+						font-size: 16px;
+					}
+					.dropdown:hover .dropdown-menu{
+						display: block !important;
+					}
+					.dropdown-menu li a:hover{
+						background-color: #34495e;
+						color: #f1c40f;
+					}
+					check, .checkbtn {
+    display: none;
+
+}
+
+
+@media screen and (max-width: 850px) {
+    .checkbtn {
+        display: block; 
+        cursor: pointer;
+    }
+    
+    
+    .checkbtn span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: white;
+        margin: 5px;
+        border-radius: 5px;
+        transition: all 0.3s;
+    }
+
+    .nav-links {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+        flex-direction: column;
+    }
+
+    .nav-links li {
+        display: block;
+        margin: 50px 0;
+
+    display: flex;
+    justify-content: center;
+    list-style: none;
+
+
+
+    }
+
+  
+    #check:checked ~ .nav-links {
+        left: 0;
+    }
+}
+.marquee-container {
+    width: 100%;
+    overflow: hidden; 
+    background-color: transparent; 
+    padding: 10px 0;
+    white-space: nowrap;
+}
+
+.marquee-text {
+    display: inline-block;
+    font-weight: bold;
+    color: #c0392b;
+    font-size: 18px;
+    animation: marquee-animation 40s linear infinite;
+}
+
+
+@keyframes marquee-animation {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+}
+@media (max-width: 952px) {
+    .nav-links {
+        position: fixed;
+        width: 50%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left: -100% !important; 
+        transition: all 0.5s;
+        z-index: 1000;
+        display: none;
+      background-image: url(slpic\ ali-maah-zyOeEm4NsPM-unsplash);
+
+        
+    }
+
+ 
+    .nav-links.active {
+        left: 0 !important;
+        display: block;
+    }
+    .checkbtn{
+    	cursor: pointer;
+
+    }
+    .navbar{
+    	position: relative;
+
+    }
+    .nav-links li{
+    	display: block;
+    	margin: 50px 0;
+    	line-height: 30px;
+    }
+}
+
+
+				
+	</style>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+<body bgcolor="lightblue">
+	<h1> SRI LANKA TOURISM WIKI</h1>
+	<nav class="navbar">
+		<div class="logo"><img src="slpic\2.png"></div>
+		
+		
+		<label  class="checkbtn" id="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+</label>
+
+		<ul class="nav-links">
+			<li><a href="index.html">HOME</a></li>
+				<li class="dropdown">
+			<a href="services+.html">SERVICES +</a>
+			<ul class="dropdown-menu">
+			<li><a href="places.html">PLACES</a></li>
+			<li><a href="ablk.html">ABOUT SRI LANAKA</a></li>
+			<li><a href="culture.html">CULTURE</a></li>
+		</ul></li>
+			<li><a href="about.html">ABOUT</a></li>
+			<li><a href="Contactus.html">COMMENT</a></li>
+		</ul>
+
+	</nav>
+	<p>
+		Sri Lanka is one of the most beautiful countries in the world. Although it is a small island, it possesses a rich and majestic history that could take a lifetime to explore. Our past is filled with brave kings and mighty kingdoms who created magnificent monuments and cultural treasures that still amaze the world today. 
+	</p>
+		<br>
+		<span class="journey">LET START OUR JOURNEY!!!</span>
+		<br>
+		<img src="slpic\1.jpg">
+		<br>
+		<br>
+		<div class="marquee-container">
+    <p class="marquee-text">
+        THANK YOU FOR VISITING US!!!.. I THINK YOU SATISFIED ABOUT THIS INFORMATION........... 
+        THANK YOU FOR VISITING US!!!.. I THINK YOU SATISFIED ABOUT THIS INFORMATION...........
+    </p>
+</div>
+
+<script>
+function toggleMenu() {
+    var menu = document.querySelector('.nav-links');
+    if (menu.classList.contains('active')) {
+        menu.classList.remove('active');
+    } else {
+        menu.classList.add('active');
+    }
+}
+</script>
+
+
+
+		
+
+		
+
+
+		
+
+	
+</body>
+
+</html>

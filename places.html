@@ -1,0 +1,519 @@
+<html>
+<head>
+    <title>Sri Lanka's WIKI</title>
+    <style type="text/css">
+        h1{ color:darkred;
+            text-align:center;
+            font-size: 40px;
+             }
+             .place{
+                font-size: 20px;
+                
+                margin: 100px;
+             }
+             .place-link{
+                      display: block;
+                     color: red; }            
+                 .navbar{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    background-color:  darkcyan;
+                    padding: rem(1, 2);
+                    color: white;
+                height: 100px;
+                }
+                .logo img{
+                    width: 100px;
+                    height: auto;
+                    display: block;
+                    float: left;
+                     margin-right: 20px;
+                }
+                .nav-links{
+                    display: flex;
+                    list-style:none;
+                    align-items: center;
+                    justify-content: center;
+                    flex-grow: 1;
+                }
+                .nav-links li{
+                        margin-left: 100px;
+                }
+                .nav-links a{
+                    color: white;
+                    text-decoration: none;
+                    font-weight: bold;
+                    transition: 0.3s;
+                    }
+                    .nav-links a:hover{
+                        color: #ff9900;
+                    }
+                    .logo{
+                        font-size: 24px;
+                        font-weight: bold;
+                        letter-spacing: 2px;
+                    }
+                    .dropdown{
+                        position: relative;
+                    }
+                    .dropdown-menu{
+                        display: none;
+                        position: absolute;
+                        background-color:  darkcyan;
+                        min-width: 160px;
+                        top: 100%;
+                        left: 0;
+                        z-index: 999;
+                    }
+                    .dropdown-menu li {
+                        margin: 0 !important;
+                    }
+                    .dropdown-menu li a {
+                        padding: 10px 20px;
+                        display: block;
+                        font-size: 16px;
+                    }
+                    .dropdown:hover .dropdown-menu{
+                        display: block !important;
+                    }
+                    .dropdown-menu li a:hover{
+                        background-color: #34495e;
+                        color: #f1c40f;
+                    }
+                    check, .checkbtn {
+    display: none;
+
+}
+
+
+@media screen and (max-width: 850px) {
+    .checkbtn {
+        display: block; 
+        cursor: pointer;
+    }
+    
+    
+    .checkbtn span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: white;
+        margin: 5px;
+        border-radius: 5px;
+        transition: all 0.3s;
+    }
+
+    .nav-links {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+        flex-direction: column;
+    }
+
+    .nav-links li {
+        display: block;
+        margin: 50px 0;
+    }
+
+  
+    #check:checked ~ .nav-links {
+        left: 0;
+    }
+}
+.main-content {
+    text-align: center;
+    padding: 20px;
+}
+
+
+.search-box {
+    margin-bottom: 40px;
+}
+
+.search-box input {
+    padding: 10px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.search-box button {
+    padding: 10px 20px;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.places-list {
+    display: flex;
+    flex-wrap: wrap;   
+    justify-content: center;
+    gap: 15px;          
+    margin-top: 20px;
+
+}
+
+.place-link {
+    display: block;
+    text-align: center;
+    padding: 15px 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+    font-size: 17px;
+    transition: 0.3s;
+}
+@media (max-width: 768px) {
+    .places-container {
+        grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+.place-link:hover {
+    background-color: #007bff;
+    color: white;
+    border-color: #0056b3;
+}
+
+        .places-list {
+     display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    padding: 20px;
+}
+
+
+.places-list h2 {
+    width: 100%;           
+    text-align: center;     
+    margin-bottom: 20px; 
+    color: darkmagenta;   
+}
+.place-btn[style*="display: none"] {
+    opacity: 0;
+    transform: scale(0.8);
+}
+.dist-title {
+    display: block;
+    font-size: 26px;
+    color: #2c3e50;
+    margin-top: 30px;
+    border-bottom: 2px solid #e67e22;
+    padding-bottom: 5px;
+   }
+   a.place-link {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: lightsalmon;
+    color: #2c3e50;
+    border: 2px solid #2c3e50;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+h2.place-link {
+    display: block;        
+    width: 100%;          
+    background: none !important; 
+    border: none !important;    
+    color: #E64A19;       
+    font-size: 28px;
+    text-align: left;      
+    margin-top: 30px;
+    padding: 0;
+}
+@media (max-width: 952px) {
+    .nav-links {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left: -100%; 
+        transition: all 0.5s;
+        display: block;
+    }
+
+ 
+    .nav-links.active {
+        left: 0;
+    }
+}
+
+
+                
+    </style>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+         
+</head>
+<body bgcolor="lightblue">
+    <h1> SRI LANKA TOURISM WIKI</h1>
+    <nav class="navbar">
+     <div class="logo"><img src="2.png"></div>
+                <label for="check" class="checkbtn" id="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+</label>
+
+        <ul class="nav-links">
+            <li><a href="index.html">HOME</a></li>
+                <li class="dropdown">
+            <a href="services+.html">SERVICES +</a>
+            <ul class="dropdown-menu">
+            <li><a href="places.html">PLACES</a></li>
+            <li><a href="ablk.html">ABOUT SRI LANAKA</a></li>
+            <li><a href="culture.html">CULTURE</a></li>
+        </ul></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="Contactus.html">COMMENT</a></li>
+        </ul>
+
+    </nav>
+<div class="main-content">
+    <div class="search-box">
+       <input type="text" id="myInput" onkeyup="myFilter()" placeholder="Search names..">
+        <button>Search</button>
+    </div>
+
+    
+        <h3>Popular Places</h3>
+       
+            <h2 class="place-link" >ANURADHAPURA</h2>
+           
+            <div class="places-list">
+            <a href="#" class="place-link">Jaya Sri Maha Bodhi</a>
+            <a href="ruwanweli.html" class="place-link">Ruwanweli Maha Seya</a>
+            <a href="#" class="place-link">Abhayagiri Vihara</a>
+            <a href="#" class="place-link">Jetavanaramaya</a>
+            <a href="#" class="place-link">Thuparamaya</a>
+            <a href="#" class="place-link">Samadhi Buddha Statue</a>
+            <a href="#" class="place-link">Twin Ponds (Kuttam Pokuna)</a>
+            <a href="#" class="place-link">Isurumuniya</a>
+            <a href="#" class="place-link">Mirisawetiya Stupa</a>
+            <a href="#" class="place-link">Lankarama</a>
+            <a href="#" class="place-link">Nuwara Wewa</a>
+            <a href="#" class="place-link">Tissa Wewa</a>
+            <a href="#" class="place-link">Lovamahapaya</a>
+            <a href="#" class="place-link">Ranmasu</a>
+            <a href="#" class="place-link">Ratnaprasada</a>
+            <a href="#" class="place-link">Dakkhina Stupa</a>
+            <a href="#" class="place-link">Sela Stupa</a>
+            <a href="#" class="place-link">Naka VIhara</a>
+            <a href="#" class="place-link"> Kiribath Vihara</a>
+            <a href="#" class="place-link">Vijayabahu Palace</a>
+            <a href="#" class="place-link">Pankilya Ashokaramaya</a>
+            <a href="#" class="place-link">Vessagiriya</a>
+            <a href="#" class="place-link">Eth Pokuna</a>
+            <a href="#" class="place-link">Gal Palama</a>
+            <a href="#" class="place-link">Gedige</a>
+
+            <a href="#" class="place-link">Avukana Buddha Statue</a>
+            <a href="#" class="place-link">Kala wewa</a>
+            <a href="#" class="place-link">Pacinatissa Pabbata Vihara</a>
+            <a href="#" class="place-link">Toluvila statue</a>
+
+            <a href="#" class="place-link">Mihinatale</a>
+            <a href="#" class="place-link">Magul Uyana</a>
+            <a href="#" class="place-link">Kujjatissa Pabbata</a>
+            <a href="#" class="place-link">Sangamitta Stupa</a>
+
+            <a href="#" class="place-link">Burrows' Pavilion</a>
+            <a href="#" class="place-link">Basawakkulama Wewa</a>
+            <a href="#" class="place-link">Yoda Ela</a>
+            <a href="#" class="place-link">Balalu Wewa</a>
+            <a href="#" class="place-link">Sela Stupa</a>
+            <a href="#" class="place-link">Adahana Maluwa</a>
+            <a href="#" class="place-link">Pachina Tissa Pabbata Vihara</a>
+            <a href="#" class="place-link">Bulankulama Wewa</a>
+
+            <a href="#" class="place-link">Padeniya Wewa</a>
+            <a href="#" class="place-link">Mahakanadarawa Wewa</a>
+
+            <a href="#" class="place-link">Potgul Vihara</a>
+            <a href="#" class="place-link">Malwathu Oya</a>
+            <a href="#" class="place-link">Thanthirimale</a>
+            <a href="#" class="place-link">Sandahiru Seya</a>
+              <a href="#" class="place-link">Wilpattu National Park</a>  
+              <a href="#" class="place-link">Ritigala Strike Nature Reserve</a> 
+
+               <a href="#" class="place-link">Kala Wewa Sanctuary</a> 
+                <a href="#" class="place-link">Mahakanadarawa Sanctuary</a> 
+                 <a href="#" class="place-link">Nachchaduwa Wewa</a> 
+                  <a href="#" class="place-link">Namal Uyana</a> 
+                   <a href="#" class="place-link">Galkulama Wewa</a>  
+             </div> 
+              <h2 class="place-link">POLONNARUWA</h2>
+              <div class="places-list">      
+           
+            <a href="#" class="place-link">Parakrama Samudraya</a>
+
+            <a href="#" class="place-link">Gal Vihara</a>
+            <a href="#" class="place-link">Polonnaruwa Vatadage</a>
+            <a href="#" class="place-link">Lankathilaka Vihara</a>
+            <a href="#" class="place-link">Nissanka Latha Mandapaya</a>
+
+            <a href="#" class="place-link">Potgul Vehera Polonnaruwa</a>
+            <a href="#" class="place-link">Rankot Vihara Polonnaruwa</a>
+
+            <a href="#" class="place-link">Tivanka Image House</a>
+            <a href="#" class="place-link">Satmahal Prasada</a>
+            <a href="#" class="place-link">Haradageya</a>
+            <a href="#" class="place-link">Kumara Pokuna</a>
+            <a href="#" class="place-link">Alahana Pirivena</a>
+            <a href="#" class="place-link">Shiva Devalaya</a>
+            <a href="#" class="place-link">Vijayanta Prasada (Parakramabahu Palace)</a>
+
+            <a href="#" class="place-link">Gal Potha Inscription</a>
+            <a href="#" class="place-link">Pabalu Vehera</a>
+            <a href="#" class="place-link">Polonnaruwa Museum</a>
+            <a href="#" class="place-link">Lotus Pond</a>
+               <a href="#" class="place-link">Minneriya National Park</a>  
+            <a href="#" class="place-link">Kaudulla National Park</a>
+            <a href="#" class="place-link">Angamadilla National Park</a>
+        </div>
+        <h2 class="place-link">KANDY</h2>
+              <div class="places-list">      
+            <a href="#" class="place-link">Temple of Sacred Tooth Relic</a>
+            <a href="#" class="place-link">Sathara Maha Devalaya</a>
+            <a href="#" class="place-link">Lankatilaka Vihara</a>
+            <a href="#" class="place-link">Gadaladeniya Vihara</a>
+
+            <a href="#" class="place-link">Embekka Devalaya</a>
+            <a href="#" class="place-link">Bahirawakanda Vihara</a>
+            <a href="#" class="place-link">Bogambara Lake</a>
+            <a href="#" class="place-link">National Museum of Kandy</a>
+            <a href="#" class="place-link">Hantana Mountain</a>
+
+            <a href="#" class="place-link">Udawatta Kale Sanctuary</a>
+            <a href="#" class="place-link">Ceylon Tea Museum</a>
+
+            <a href="#" class="place-link">Peradeniya Botnical Garden</a>
+            <a href="#" class="place-link">Asgiri Vihara</a>
+
+            <a href="#" class="place-link">Malwathu Vihara</a>
+            <a href="#" class="place-link">Kandy Cultural Center</a>
+
+            <a href="#" class="place-link">Ambuluwawa Tower</a>
+
+            <a href="#" class="place-link">Hunnasgiri Falls</a>
+            <a href="#" class="place-link">Wales Park(Royal Palace Park)</a>
+            <a href="#" class="place-link">Riverston</a>
+
+            <a href="#" class="place-link">Hindagala Raja Maha Vihara</a>
+
+            <a href="#" class="place-link">Padeniya Hanging Bridge</a>
+            <a href="#" class="place-link">Bambaragala Vihara</a>
+
+            <a href="#" class="place-link">Nelligala Temple</a>
+
+            <a href="#" class="place-link">Victoria Dam</a>
+        </div>
+         <h2 class="place-link">JAFFNA</h2>
+              <div class="places-list">      
+            <a href="#" class="place-link">Jaffna Fort</a>
+
+            <a href="#" class="place-link">Nallur Kandaswami kovil</a>
+            <a href="#" class="place-link">Mantri Manai</a>
+            <a href="#" class="place-link">Sangiliyan Thoopu</a>
+            <a href="#" class="place-link">Nainativu</a> 
+             <a href="#" class="place-link">Delft Island</a>
+              <a href="#" class="place-link">Charty Beach</a>
+                <a href="#" class="place-link">Casuarina Beach</a>
+                  <a href="#" class="place-link">Nilavarai Bottomless Well</a>
+                    <a href="#" class="place-link">Kadurugoda Vihara</a>
+                      <a href="#" class="place-link">Elephant Pass</a>
+                        <a href="#" class="place-link">Keerimalai Sacred Spring</a>
+                        </div>
+         <h2 class="place-link">MANNAR</h2>
+              <div class="places-list">
+                          <a href="#" class="place-link">Mannar Fort</a>
+                            <a href="#" class="place-link">Madhu Church</a>
+                              <a href="#" class="place-link">Thiruketheeswaram Kovil</a>
+                                <a href="#" class="place-link">Adam's Bridge(Rama Setu)</a>
+                                  <a href="#" class="place-link">Vankalai Bird Sanctuary</a>
+                                    <a href="#" class="place-link">The Doric</a>
+
+                                      <a href="#" class="place-link">Arippu Beach</a>
+                                        <a href="#" class="place-link">Arippu Fort</a>
+                                        </div>
+         <h2 class="place-link">Nuwara Eliya</h2>
+              <div class="places-list">
+                                          <a href="#" class="place-link">Gregory Lake</a>
+                                            <a href="#" class="place-link">Victoria Park</a>
+                                              <a href="#" class="place-link">Post Office</a>
+                                         <a href="#" class="place-link">Baker's Falls</a>
+                                         <a href="#" class="place-link">Horton Plains</a>
+
+                                            <a href="#" class="place-link">Piduruthalagala</a>
+                                        <a href="#" class="place-link"></a>
+
+                                     <a href="#" class="place-link">Seetha Amman Temple</a>
+                                    <a href="#" class="place-link">Hakgala Botnical Garden</a>
+                                    <a href="#" class="place-link">Moon Plains</a>
+                                    <a href="#" class="place-link">Lovers Leap WaterFall</a>
+                             <a href="#" class="place-link">Mackwoods</a>
+                            <a href="#" class="place-link"></a>
+                            <a href="#" class="place-link"></a>
+
+                            <a href="#" class="place-link"></a>
+                    <a href="#" class="place-link"></a>
+                <a href="#" class="place-link"></a>
+        <a href="#" class="place-link"></a>
+    <a href="#" class="place-link"></a>
+<a href="#" class="place-link"></a>
+ <a href="#" class="place-link"></a>
+
+        </div>
+    </div>
+</div>
+
+
+<script>
+function myFilter() {
+    var input = document.getElementById("myInput");
+    var filter = input.value.toUpperCase();
+    var elements = document.getElementsByClassName("place-link");
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].style.display = "none";
+    }
+    for (var i = 0; i < elements.length; i++) {
+        var txtValue = elements[i].textContent || elements[i].innerText;
+        
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            elements[i].style.display = ""; 
+            if (elements[i].tagName === "H2") {
+                var next = elements[i].nextElementSibling;
+                while (next && next.tagName !== "H2") {
+                    next.style.display = "";
+                    next = next.nextElementSibling;
+                }
+            }
+        }
+    }
+}
+
+function toggleMenu() {
+   
+    document.querySelector('.nav-links').classList.toggle('active');
+}
+</script>
+
+    
+</body>
+
+</html>
+

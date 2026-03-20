@@ -1,0 +1,213 @@
+<html>
+<head>
+    <title>Sri Lanka's WIKI</title>
+    <style type="text/css">
+        h1{ color:darkred;
+            text-align:center;
+            font-size: 40px;
+             }
+                 .navbar{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    background-color:  darkcyan;
+                    padding: rem(1, 2);
+                    color: white;
+                height: 100px;
+                }
+                .logo img{
+                    width: 100px;
+                    height: auto;
+                    display: block;
+                    float: left;
+                     margin-right: 20px;
+                }
+                .nav-links{
+                    display: flex;
+                    list-style:none;
+                    align-items: center;
+                    justify-content: center;
+                    flex-grow: 1;
+                }
+                .nav-links li{
+                        margin-left: 100px;
+                }
+       
+
+                .nav-links a{
+                    color: white;
+                    text-decoration: none;
+                    font-weight: bold;
+                    transition: 0.3s;
+                    }
+                    .nav-links a:hover{
+                        color: #ff9900;
+                    }
+                    .logo{
+                        font-size: 24px;
+                        font-weight: bold;
+                        letter-spacing: 2px;
+                    }
+                    .dropdown{
+                        position: relative;
+                    }
+                    .dropdown-menu{
+                        display: none;
+                        position: absolute;
+                        background-color:  darkcyan;
+                        min-width: 160px;
+                        top: 100%;
+                        left: 0;
+                        z-index: 999;
+                    }
+                    .dropdown-menu li {
+                        margin: 0 !important;
+                    }
+                    .dropdown-menu li a {
+                        padding: 10px 20px;
+                        display: block;
+                        font-size: 16px;
+                    }
+                    .dropdown:hover .dropdown-menu{
+                        display: block !important;
+                    }
+                    .dropdown-menu li a:hover{
+                        background-color: #34495e;
+                        color: #f1c40f;
+                    }
+                    check, .checkbtn {
+    display: none;
+
+}
+
+
+@media screen and (max-width: 850px) {
+    .checkbtn {
+        display: block; 
+        cursor: pointer;
+    }
+    
+    
+    .checkbtn span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: white;
+        margin: 5px;
+        border-radius: 5px;
+        transition: all 0.3s;
+    }
+
+    .nav-links {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+        flex-direction: column;
+    }
+
+    .nav-links li {
+        display: block;
+        margin: 50px 0;
+    }
+
+  
+    #check:checked ~ .nav-links {
+        left: 0;
+    }
+}
+
+.stupa-details {
+    list-style: none;
+    padding: 0;
+}
+
+.ruwanweli li {
+    background: yellowgreen;
+    margin-bottom: 8px;
+    padding: 12px;
+    border-right: 6px solid #e67e22; 
+    border-radius: 4px;
+}
+.description-text {
+    font-size: 19px;
+    line-height: 1.8; 
+    color: #2c3e50;
+    text-align: justify; 
+    font-family: 'Iskoola Pota', 'Nirmala UI', sans-serif;
+}
+@media (max-width: 952px) {
+    .nav-links {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left: -100%; 
+        transition: all 0.5s;
+        display: block;
+    }
+
+ 
+    .nav-links.active {
+        left: 0;
+    }
+}
+
+                
+    </style>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+<body bgcolor="lightblue">
+    <h1> SRI LANKA TOURISM WIKI</h1>
+    <nav class="navbar">
+        <div class="logo"><img src="2.png"></div>
+    
+           <label for="check" class="checkbtn" id="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+</label>
+
+        <ul class="nav-links">
+            <li><a href="index.html">HOME</a></li>
+                <li class="dropdown">
+            <a href="services+.html">SERVICES +</a>
+            <ul class="dropdown-menu">
+            <li><a href="places.html">PLACES</a></li>
+            <li><a href="ablk.html">ABOUT SRI LANAKA</a></li>
+            <li><a href="culture.html">CULTURE</a></li>
+        </ul></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="Contactus.html">COMMENT</a></li>
+        </ul>
+
+    </nav>
+    <p class="description-text">
+        The Ruwanweli Maha Seya, built by King Dutugemunu who ruled ancient Sri Lanka, is considered a magnificent masterpiece in the sacred city of Anuradhapura. It stands as a proud symbol of the great architectural heritage showcased by ancient Sri Lankans to the world. Also known as "Swarnamali Maha Seya," this stupa is one of the most venerated sites among the "Atamasthana" (the eight sacred places) by Buddhists worldwide.
+<h3>Special Features and Architecture</h3>
+<ul class="ruwanweli">
+<li><b>Shape:</b> The stupa is built in the "Bubbulakara" (bubble) shape and stands at a majestic height of 338 feet.</li>
+<li><b>Enshrinement of Relics:</b> According to historical records, it is believed that the largest collection of Lord Buddha’s sacred bodily relics is enshrined within this stupa.</li>
+<li><b>Elephant Wall (Eth Pavura): </b>To protect the stupa, a special surrounding wall was built, featuring 1,900 elephant figures carved in relief, appearing as if they are supporting the structure.</li></ul></p>
+<h3>Visitor Information</h3>
+<p class="description-text">Ruwanweli Seya is one of the most beloved destinations for tourists from all over the world. If you are planning to visit, it is mandatory to wear modest white attire. The peaceful atmosphere in the evening, with the soft glow of oil lamps around the stupa, brings a sense of immense mental relief and joy to anyone who visits.
+    </p>
+
+<script>
+function toggleMenu() {
+   
+    document.querySelector('.nav-links').classList.toggle('active');
+}
+</script>
+
+        
+
+    
+</body>
+
+</html>
